@@ -6,9 +6,9 @@ const webpackConfigCreator = require(`${__dirname}/webpack.config.js`);
 const ncp = require('ncp').ncp;
 var appRoot = require('app-root-path');
 
-const buildFolder = process.argv[2] || 'build';
-const tmpfolder = '.tmp_platformsh';
-const prodfolder = process.argv[3] || 'build_platform';
+const buildFolder = process.argv[2] || 'build';
+const tmpfolder = '.tmp_platformsh';
+const prodfolder = process.argv[3] || 'build_platform';
 
 function decode(env_name) {
   return Buffer.from(process.env[env_name], 'base64').toString('ascii');
@@ -21,11 +21,9 @@ ncp(buildFolder, prodfolder, function (err) {
   console.log('done!');
 
   let routesConfig = 'test';
-  let relationshipsConfig = 'test';
 
   try {
-    routesConfig = JSON.parse(Buffer.from(decode("PLATFORM_ROUTES"), 'base64').toString('ascii'));
-    relationshipsConfig = JSON.parse(Buffer.from(decode('PLATFORM_RELATIONSHIPS'), 'base64').toString('ascii'));
+    routesConfig = JSON.parse(decode("PLATFORM_ROUTES"));
   }catch(err) {
 
   }
@@ -35,7 +33,6 @@ ncp(buildFolder, prodfolder, function (err) {
   }
 
   jsonfile.writeFileSync(`${tmpfolder}/routes.json`, routesConfig);
-  jsonfile.writeFileSync(`${tmpfolder}/relationships.json`, relationshipsConfig);
 
   const webpackConfig = webpackConfigCreator(appRoot.toString(), prodfolder);
 

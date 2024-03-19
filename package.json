@@ -1,7 +1,7 @@
 {
-  "name": "platformsh_variables",
+  "name": "my_platformsh_variables",
   "version": "1.0.5",
-  "description": "",
+  "description": "This is a simple package who permit to have access to the platform.sh variables",
   "main": "lib/mock.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
