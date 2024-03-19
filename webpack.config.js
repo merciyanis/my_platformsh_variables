@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var path = require('path');
 
-var libraryName = 'platformsh_variables';
+var libraryName = 'my_platformsh_variables';
 function createConfig(appRoot, platformBuildFolder) {
   return {
     entry: __dirname + '/src/index.js',
