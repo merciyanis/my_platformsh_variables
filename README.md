@@ -25,6 +25,13 @@ Add `npm run buildenvvar` in the `deploy` hook.
 
 and change your root location to the folder `build_platform`.
 
+```
+  web:
+    locations:
+      /:
+        root: "build_platform"
+```
+
 In your production webpack config, add `platformsh_variables` as external like:
 ```
 externals: {
@@ -38,3 +45,7 @@ import platformVar from 'platformsh_variables';
 
 ```
 In development mode, the variable will be mocked (see lib/mock.js)
+
+## Publish
+
+Follow the instructions described in this action : [NPM Publish](https://github.com/marketplace/actions/npm-publish)
