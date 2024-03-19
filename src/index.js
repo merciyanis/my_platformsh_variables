@@ -1,5 +1,10 @@
-var environmentVariable = require(APP_ROOT + '/.tmp_platformsh/routes.json');
+const routesVariable = require(APP_ROOT + '/.tmp_platformsh/routes.json');
+const relationshipsVariable = require(APP_ROOT + '/.tmp_platformsh/relationships.json');
 
-window.platformshEnvironmentVariable = environmentVariable;
+window.routesVariable = routesVariable;
+window.relationshipsVariable = relationshipsVariable;
 
-export default environmentVariable;
+export {
+    routesVariable,
+    relationshipsVariable
+};
