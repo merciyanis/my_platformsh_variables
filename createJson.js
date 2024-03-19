@@ -40,7 +40,7 @@ ncp(buildFolder, prodfolder, function (err) {
 
   // We only get the relationships for the API service to avoid leaking sensitive information
   // If you need to use relationships for other services, you can change the code below
-  jsonfile.writeFileSync(`${tmpfolder}/relationships.json`, relationshipsConfig?.[API_SERVICE_NAME]?.[0] || {});
+  jsonfile.writeFileSync(`${tmpfolder}/api_relationship.json`, relationshipsConfig?.[API_SERVICE_NAME]?.[0] || {});
 
   const webpackConfig = webpackConfigCreator(appRoot.toString(), prodfolder);
 
