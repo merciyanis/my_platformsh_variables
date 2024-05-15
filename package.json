@@ -5,7 +5,8 @@
   "main": "lib/mock.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create": "node ./createJson.js"
+    "create": "node ./createJson.js",
+    "clean": "rm -rf .tmp_platformsh build_platform"
   },
   "bin": {
     "platform-var": "./createJson.js"
@@ -13,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "app-root-path": "^2.0.1",
-    "jsonfile": "^2.4.0",
-    "ncp": "^2.0.0",
-    "webpack": "^2.3.3"
+    "app-root-path": "3.1.0",
+    "jsonfile": "6.1.0",
+    "ncp": "2.0.0",
+    "webpack": "5.91.0"
   }
 }
